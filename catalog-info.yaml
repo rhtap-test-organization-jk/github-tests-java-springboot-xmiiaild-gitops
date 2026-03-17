@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: github-tests-java-springboot-xmiiaild-gitops
+  description: This is GitOps manifest for github-tests-java-springboot-xmiiaild   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=github-tests-java-springboot-xmiiaild
+    backstage.io/kubernetes-id: github-tests-java-springboot-xmiiaild 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: rhtap-test-organization-jk/github-tests-java-springboot-xmiiaild-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:github-tests-java-springboot-xmiiaild
